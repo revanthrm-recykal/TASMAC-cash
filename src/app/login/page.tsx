@@ -25,7 +25,7 @@ export default function LoginPage() {
     if (mode === "agent") {
       fetch("/api/agents/public")
         .then((r) => r.json())
-        .then(setAgents)
+        .then((data) => { if (Array.isArray(data)) setAgents(data); })
         .catch(() => {});
     }
   }, [mode]);
