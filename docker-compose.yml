@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    image: tasmac-cash
+    container_name: tasmac-cash
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
